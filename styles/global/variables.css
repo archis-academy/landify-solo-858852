@@ -1,9 +1,35 @@
 :root {
   /* COLORS */
+  --pure-black: #000000;
+  --pure-white: #ffffff;
+  --canvas-white: #ffffff;
+  --soft-ivory: #f9fafb;
+  --ink-900: #1f2937;
+  --ink-600: #4b5563;
+  --ink-400: #9ca3af;
+  --line-200: #e5e7eb;
+  --primary-600: #4f46e5;
+  --primary-700: #4338ca;
+  --primary-100: #e0e7ff;
+  --primary-50: #eef2ff;
 
   /* FONT SIZES */
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-display: clamp(2.25rem, 5vw + 0.5rem, 3.75rem);
 
   /* FONT WEIGHTS */
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  /* LAYOUT */
+  --container-width: 1200px;
+  --container-padding: 24px;
+  --header-height: 80px;
+  --radius-md: 8px;
 
   /* Breakpoints */
   --breakpoint-sm: 576px;

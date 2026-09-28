@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <!-- Favicon -->
-    <link rel="icon" href="./public/archis-logo.svg" />
+    <link rel="icon" href="./public/landify-logo.svg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,22 +14,115 @@
     />
 
     <meta charset="UTF-8" />
-    <title>TrustCo</title>
-    <meta name="description" content="Welcome to Archis" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Landify</title>
+    <meta
+      name="description"
+      content="Landify — introduce your product quickly and effectively."
+    />
     <link rel="stylesheet" href="./styles/index.css" type="text/css" />
   </head>
 
   <body>
-    <header class="welcome-header">
-      <img src="./public/archis-logo.svg" alt="Archis Logo" />
-      <h1>Welcome to Archis</h1>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="#" class="logo" aria-label="Landify home">
+          <img src="./public/landify-logo.svg" alt="" width="32" height="32" />
+          Landify
+        </a>
 
-      <em>Copyright &copy; <span id="copyright-year"></span></em>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="#" class="nav__link" aria-current="page">Home</a></li>
+            <li><a href="#features" class="nav__link">Features</a></li>
+            <li><a href="#pricing" class="nav__link">Pricing</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+          </ul>
+          <a href="#" class="btn btn--primary btn--sm">Get Started</a>
+        </nav>
+      </div>
     </header>
 
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <span class="hero__eyebrow">Landing page UI kit</span>
+            <h1 class="hero__title" id="hero-title">
+              Introduce Your Product
+              <span class="hero__title-accent">Quickly &amp; Effectively</span>
+            </h1>
+            <p class="hero__text">
+              Showcase your app with a clean, conversion-focused landing page.
+              Launch faster and let your product speak for itself.
+            </p>
+            <div class="hero__actions">
+              <a href="#" class="btn btn--primary">Get Started Free</a>
+              <a href="#features" class="btn btn--ghost">Learn More</a>
+            </div>
+          </div>
+
+          <div class="hero__visual" aria-hidden="true">
+            <div class="phone">
+              <div class="phone__notch"></div>
+              <div class="phone__screen">
+                <div class="phone__bar">
+                  <span>Hi, Alex 👋</span>
+                  <span class="phone__avatar"></span>
+                </div>
+                <div class="phone__card">
+                  <p class="phone__card-label">Total balance</p>
+                  <p class="phone__card-value">$12,480.00</p>
+                </div>
+                <div class="phone__chart">
+                  <span style="height: 40%"></span>
+                  <span style="height: 65%"></span>
+                  <span style="height: 50%"></span>
+                  <span style="height: 90%"></span>
+                  <span style="height: 55%"></span>
+                  <span style="height: 70%"></span>
+                </div>
+                <div class="phone__list">
+                  <div class="phone__item">
+                    <span class="phone__item-icon"></span>
+                    <span class="phone__item-lines"><span></span><span></span></span>
+                  </div>
+                  <div class="phone__item">
+                    <span class="phone__item-icon"></span>
+                    <span class="phone__item-lines"><span></span><span></span></span>
+                  </div>
+                  <div class="phone__item">
+                    <span class="phone__item-icon"></span>
+                    <span class="phone__item-lines"><span></span><span></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <script>
-      const copyRightYear = document.getElementById("copyright-year");
-      copyRightYear.innerText = new Date().getFullYear();
+      const navToggle = document.querySelector(".nav-toggle");
+      const nav = document.getElementById("primary-nav");
+
+      navToggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+      });
     </script>
   </body>
 </html>
