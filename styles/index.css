@@ -1,0 +1,8 @@
+@import url("/styles/global/reset.css");
+@import url("/styles/global/variables.css");
+
+/*
+* import other css files here
+*/
+
+@import url("/styles/sections/welcome.css");
