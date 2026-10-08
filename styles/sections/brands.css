@@ -1,0 +1,106 @@
+.brands {
+  background: var(--pure-white);
+}
+
+.brands__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  max-width: var(--container-width);
+  min-height: 76px;
+  margin-inline: auto;
+  padding: 24px var(--container-padding);
+}
+
+.brands__list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brands__logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.brands__logo--airbnb {
+  height: 20px;
+}
+
+.brands__logo--hubspot {
+  height: 16px;
+}
+
+.brands__logo--google {
+  height: 18px;
+}
+
+.brands__logo--microsoft {
+  height: 15px;
+}
+
+.brands__logo--walmart {
+  height: 17px;
+}
+
+.brands__logo--fedex {
+  height: 14px;
+}
+
+@media (max-width: 992px) {
+  .brands__list {
+    gap: 28px;
+    min-height: 96px;
+    padding-block: 28px;
+  }
+
+  .brands__logo--airbnb {
+    height: 18px;
+  }
+
+  .brands__logo--hubspot {
+    height: 14px;
+  }
+
+  .brands__logo--google {
+    height: 16px;
+  }
+
+  .brands__logo--microsoft {
+    height: 13px;
+  }
+
+  .brands__logo--walmart {
+    height: 15px;
+  }
+
+  .brands__logo--fedex {
+    height: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .brands__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 16px;
+    min-height: 0;
+    padding-block: 32px;
+  }
+
+  .brands__logo,
+  .brands__logo--airbnb,
+  .brands__logo--hubspot,
+  .brands__logo--google,
+  .brands__logo--microsoft,
+  .brands__logo--walmart,
+  .brands__logo--fedex {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 18px;
+  }
+}

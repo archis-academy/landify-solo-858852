@@ -13,6 +13,15 @@
   --primary-100: #e0e7ff;
   --primary-50: #eef2ff;
 
+  /* LANDIFY BRAND */
+  --landify-ink: #0b0d17;
+  --landify-purple: #8c30f5;
+  --landify-purple-hover: #7b22e6;
+  --landify-purple-soft: #d4a5ff;
+  --landify-lavender: #ede5ff;
+  --landify-turquoise: #70e1e7;
+  --landify-ice: #f4f7ff;
+
   /* FONT SIZES */
   --fs-sm: 0.875rem;
   --fs-base: 1rem;

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -18,7 +18,7 @@
     <title>Landify</title>
     <meta
       name="description"
-      content="Landify — introduce your product quickly and effectively."
+      content="Organise projects. Get more done."
     />
     <link rel="stylesheet" href="./styles/index.css" type="text/css" />
   </head>
@@ -27,8 +27,13 @@
     <header class="site-header">
       <div class="container site-header__inner">
         <a href="#" class="logo" aria-label="Landify home">
-          <img src="./public/landify-logo.svg" alt="" width="32" height="32" />
-          Landify
+          <img
+            src="./styles/img/Colorlogo.png"
+            alt=""
+            width="28"
+            height="28"
+          />
+          <span class="logo__wordmark">Landify</span>
         </a>
 
         <button
@@ -45,73 +50,128 @@
 
         <nav class="nav" id="primary-nav" aria-label="Primary">
           <ul class="nav__list">
-            <li><a href="#" class="nav__link" aria-current="page">Home</a></li>
-            <li><a href="#features" class="nav__link">Features</a></li>
-            <li><a href="#pricing" class="nav__link">Pricing</a></li>
-            <li><a href="#contact" class="nav__link">Contact</a></li>
+            <li><a href="#" class="nav__link">About</a></li>
+            <li><a href="#" class="nav__link">Products</a></li>
+            <li><a href="#" class="nav__link">Pricing</a></li>
+            <li><a href="#" class="nav__link">Blog</a></li>
+            <li><a href="#" class="nav__link">Jobs</a></li>
+            <li>
+              <a href="#" class="nav__link nav__link--more">
+                More
+                <svg class="nav__chevron" viewBox="0 0 10 6" aria-hidden="true">
+                  <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
           </ul>
-          <a href="#" class="btn btn--primary btn--sm">Get Started</a>
+          <div class="store-badges">
+            <a href="#" aria-label="Get it on Google Play">
+              <img src="./styles/img/google-play-badge.svg" alt="" width="135" height="40" />
+            </a>
+            <a href="#" aria-label="Download on the App Store">
+              <img src="./styles/img/app-store-badge.svg" alt="" width="120" height="40" />
+            </a>
+          </div>
         </nav>
       </div>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__bg" aria-hidden="true">
+          <div class="hero__glow"></div>
+          <svg
+            class="hero__art"
+            viewBox="0 0 1440 430"
+            preserveAspectRatio="none"
+            focusable="false"
+          >
+            <!-- open white space below the turquoise ribbon -->
+            <polygon class="hero__shape--white" points="0,358 1440,158 1440,430 0,430" />
+            <polygon class="hero__shape--lavender" points="0,372 380,320 250,430 0,430" />
+            <polygon class="hero__shape--lavender" points="1150,214 1440,174 1440,430 1300,430" />
+            <polygon class="hero__shape--purple" points="860,88 1440,8 1440,66 815,153" />
+            <polygon class="hero__shape--turquoise" points="0,290 1440,92 1440,160 0,358" />
+          </svg>
+        </div>
         <div class="container hero__inner">
           <div class="hero__content">
-            <span class="hero__eyebrow">Landing page UI kit</span>
             <h1 class="hero__title" id="hero-title">
-              Introduce Your Product
-              <span class="hero__title-accent">Quickly &amp; Effectively</span>
+              Organise projects.<br />
+              Get more done.
             </h1>
-            <p class="hero__text">
-              Showcase your app with a clean, conversion-focused landing page.
-              Launch faster and let your product speak for itself.
-            </p>
-            <div class="hero__actions">
-              <a href="#" class="btn btn--primary">Get Started Free</a>
-              <a href="#features" class="btn btn--ghost">Learn More</a>
-            </div>
+            <a href="#" class="hero__cta">Get Started</a>
           </div>
 
-          <div class="hero__visual" aria-hidden="true">
-            <div class="phone">
-              <div class="phone__notch"></div>
-              <div class="phone__screen">
-                <div class="phone__bar">
-                  <span>Hi, Alex 👋</span>
-                  <span class="phone__avatar"></span>
-                </div>
-                <div class="phone__card">
-                  <p class="phone__card-label">Total balance</p>
-                  <p class="phone__card-value">$12,480.00</p>
-                </div>
-                <div class="phone__chart">
-                  <span style="height: 40%"></span>
-                  <span style="height: 65%"></span>
-                  <span style="height: 50%"></span>
-                  <span style="height: 90%"></span>
-                  <span style="height: 55%"></span>
-                  <span style="height: 70%"></span>
-                </div>
-                <div class="phone__list">
-                  <div class="phone__item">
-                    <span class="phone__item-icon"></span>
-                    <span class="phone__item-lines"><span></span><span></span></span>
-                  </div>
-                  <div class="phone__item">
-                    <span class="phone__item-icon"></span>
-                    <span class="phone__item-lines"><span></span><span></span></span>
-                  </div>
-                  <div class="phone__item">
-                    <span class="phone__item-icon"></span>
-                    <span class="phone__item-lines"><span></span><span></span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="hero__visual">
+            <img
+              class="hero__mockup"
+              src="./styles/img/Phone%20Mockup.png"
+              alt="Landify app on a phone, showing projects and today's tasks"
+              width="368"
+              height="678"
+            />
           </div>
         </div>
+      </section>
+
+      <section class="brands" aria-label="Trusted brands">
+        <ul class="brands__list">
+          <li>
+            <img
+              class="brands__logo brands__logo--airbnb"
+              src="./styles/img/airbnb.svg"
+              alt="Airbnb"
+              width="320"
+              height="100"
+            />
+          </li>
+          <li>
+            <img
+              class="brands__logo brands__logo--hubspot"
+              src="./styles/img/hubspot.svg"
+              alt="HubSpot"
+              width="106"
+              height="31"
+            />
+          </li>
+          <li>
+            <img
+              class="brands__logo brands__logo--google"
+              src="./styles/img/google.svg"
+              alt="Google"
+              width="272"
+              height="70"
+            />
+          </li>
+          <li>
+            <img
+              class="brands__logo brands__logo--microsoft"
+              src="./styles/img/microsoft.svg"
+              alt="Microsoft"
+              width="338"
+              height="72"
+            />
+          </li>
+          <li>
+            <img
+              class="brands__logo brands__logo--walmart"
+              src="./styles/img/walmart.svg"
+              alt="Walmart"
+              width="1024"
+              height="241"
+            />
+          </li>
+          <li>
+            <img
+              class="brands__logo brands__logo--fedex"
+              src="./styles/img/fedex.svg"
+              alt="FedEx"
+              width="72"
+              height="22"
+            />
+          </li>
+        </ul>
       </section>
     </main>
 
