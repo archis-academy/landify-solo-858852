@@ -7,11 +7,10 @@
   background: transparent;
 }
 
-/* Equal side columns keep the links centred on the page; minmax(max-content)
-   stops the logo or badges from ever being overlapped at narrower widths */
+/* Baseline flex layout: links are centred between the logo and the badges and
+   can never overlap them. Upgraded to true page-centring below via subgrid */
 .site-header__inner {
-  display: grid;
-  grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+  display: flex;
   align-items: center;
   column-gap: 32px;
   min-height: var(--header-height);
@@ -19,9 +18,7 @@
 }
 
 .logo {
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: start;
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -55,18 +52,18 @@
 }
 
 .nav {
-  grid-column: 2 / 4;
-  grid-row: 1;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-columns: subgrid;
+  flex: 1;
+  display: flex;
   align-items: center;
+  column-gap: inherit;
+  min-width: 0;
 }
 
 .nav__list {
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-inline: auto;
 }
 
 .nav__link {
@@ -90,7 +87,7 @@
 }
 
 .store-badges {
-  justify-self: end;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -146,6 +143,36 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Equal side columns keep the links centred on the page; minmax(max-content)
+   stops the logo or badges from ever being overlapped at narrower widths */
+@supports (grid-template-columns: subgrid) {
+  .site-header__inner {
+    display: grid;
+    grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+  }
+
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .nav {
+    grid-column: 2 / 4;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  .nav__list {
+    margin-inline: 0;
+  }
+
+  .store-badges {
+    justify-self: end;
+  }
+}
+
 @media (max-width: 1100px) {
   .site-header__inner {
     column-gap: 24px;
@@ -186,6 +213,7 @@
   }
 
   .nav__list {
+    margin-inline: 0;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
