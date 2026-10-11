@@ -3,33 +3,179 @@
 <html lang="en">
   <head>
     <!-- Favicon -->
-    <link rel="icon" href="./public/archis-logo.svg" />
+    <link rel="icon" type="image/png" href="./public/landify-favicon.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
 
     <meta charset="UTF-8" />
-    <title>TrustCo</title>
-    <meta name="description" content="Welcome to Archis" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Landify</title>
+    <meta
+      name="description"
+      content="Organise projects. Get more done."
+    />
     <link rel="stylesheet" href="./styles/index.css" type="text/css" />
   </head>
 
   <body>
-    <header class="welcome-header">
-      <img src="./public/archis-logo.svg" alt="Archis Logo" />
-      <h1>Welcome to Archis</h1>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a href="#" class="logo" aria-label="Landify home">
+          <img
+            src="./styles/img/Colorlogo.png"
+            alt=""
+            width="28"
+            height="28"
+          />
+          <span class="logo__wordmark">Landify</span>
+        </a>
 
-      <em>Copyright &copy; <span id="copyright-year"></span></em>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-controls="primary-nav header-badges"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="#" class="nav__link">About</a></li>
+            <li><a href="#" class="nav__link">Products</a></li>
+            <li><a href="#" class="nav__link">Pricing</a></li>
+            <li><a href="#" class="nav__link">Blog</a></li>
+            <li><a href="#" class="nav__link">Jobs</a></li>
+            <li>
+              <a href="#" class="nav__link nav__link--more">
+                More
+                <svg class="nav__chevron" viewBox="0 0 10 6" aria-hidden="true">
+                  <path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="store-badges" id="header-badges">
+          <a href="#" aria-label="Get it on Google Play">
+            <img src="./styles/img/badges/google-play.png" alt="" width="134" height="40" />
+          </a>
+          <a href="#" aria-label="Download on the App Store">
+            <img src="./styles/img/badges/app-store.svg" alt="" width="135" height="40" />
+          </a>
+        </div>
+      </div>
     </header>
 
-    <script>
-      const copyRightYear = document.getElementById("copyright-year");
-      copyRightYear.innerText = new Date().getFullYear();
-    </script>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__bg" aria-hidden="true">
+          <div class="hero__glow"></div>
+          <svg
+            class="hero__art"
+            viewBox="0 0 1440 430"
+            preserveAspectRatio="none"
+            focusable="false"
+          >
+            <!-- open white space below the turquoise ribbon -->
+            <polygon class="hero__shape--white" points="0,358 1440,158 1440,430 0,430" />
+            <polygon class="hero__shape--lavender" points="0,372 380,320 250,430 0,430" />
+            <polygon class="hero__shape--lavender" points="1150,214 1440,174 1440,430 1300,430" />
+            <polygon class="hero__shape--purple" points="860,88 1440,8 1440,66 815,153" />
+            <polygon class="hero__shape--turquoise" points="0,290 1440,92 1440,160 0,358" />
+          </svg>
+        </div>
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title" id="hero-title">
+              Organise projects.<br />
+              Get more done.
+            </h1>
+            <a href="#" class="hero__cta">Get Started</a>
+          </div>
+
+          <div class="hero__visual">
+            <img
+              class="hero__mockup"
+              src="./styles/img/Phone%20Mockup.png"
+              alt="Landify app on a phone, showing projects and today's tasks"
+              width="368"
+              height="678"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="brands" aria-label="Trusted brands">
+        <ul class="brands__list">
+          <li>
+            <img
+              class="brands__logo brands__logo--airbnb"
+              src="./styles/img/airbnb.svg"
+              alt="Airbnb"
+              width="320"
+              height="100"
+            />
+          </li>
+          <li>
+            <img
+              class="brands__logo brands__logo--hubspot"
+              src="./styles/img/hubspot.svg"
+              alt="HubSpot"
+              width="106"
+              height="31"
+            />
+          </li>
+          <li>
+            <img
+              class="brands__logo brands__logo--google"
+              src="./styles/img/google.svg"
+              alt="Google"
+              width="272"
+              height="70"
+            />
+          </li>
+          <li>
+            <img
+              class="brands__logo brands__logo--microsoft"
+              src="./styles/img/microsoft.svg"
+              alt="Microsoft"
+              width="338"
+              height="72"
+            />
+          </li>
+          <li>
+            <img
+              class="brands__logo brands__logo--walmart"
+              src="./styles/img/walmart.svg"
+              alt="Walmart"
+              width="1024"
+              height="241"
+            />
+          </li>
+          <li>
+            <img
+              class="brands__logo brands__logo--fedex"
+              src="./styles/img/fedex.svg"
+              alt="FedEx"
+              width="72"
+              height="22"
+            />
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="./scripts/navigation.js"></script>
   </body>
 </html>

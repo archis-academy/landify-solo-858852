@@ -1,0 +1,76 @@
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--ink-900);
+  background-color: var(--canvas-white);
+}
+
+/* Near-zero durations (rather than none) so transitionend/animationend still fire */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  line-height: 1.25;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--primary-100);
+  outline-offset: 2px;
+}
+
+.btn--primary {
+  color: var(--pure-white);
+  background: var(--primary-600);
+  box-shadow: 0 8px 20px -8px rgba(79, 70, 229, 0.6);
+}
+
+.btn--primary:hover {
+  background: var(--primary-700);
+}
+
+.btn--ghost {
+  color: var(--primary-600);
+  background: var(--primary-50);
+}
+
+.btn--ghost:hover {
+  background: var(--primary-100);
+}
+
+.btn--sm {
+  padding: 10px 20px;
+  font-size: var(--fs-sm);
+}
