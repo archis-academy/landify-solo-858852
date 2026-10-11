@@ -1,8 +1,8 @@
-/* Fixed desktop height keeps the logo strip in the 866px fold; the phone's
-   transparent shadow padding is allowed to spill past the hero edge */
+/* min-height keeps the Figma proportions (logo strip inside the 866px fold)
+   while letting the hero grow with zoom or longer copy */
 .hero {
   position: relative;
-  height: 790px;
+  min-height: 790px;
   padding-top: 150px;
   background: var(--landify-ice);
 }
@@ -102,9 +102,12 @@
   outline-offset: 2px;
 }
 
+/* Negative margin lets the PNG's transparent shadow padding spill past the
+   hero edge instead of adding empty height */
 .hero__visual {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: -38px;
 }
 
 /* PNG has ~5% transparent padding: 368px image ≈ 310px visible phone */
@@ -127,9 +130,13 @@
 
 @media (max-width: 992px) {
   .hero {
-    height: auto;
+    min-height: 0;
     padding-top: 120px;
     padding-bottom: 32px;
+  }
+
+  .hero__visual {
+    margin-bottom: 0;
   }
 
   .hero__inner {

@@ -1,16 +1,19 @@
 .brands {
+  padding: 24px var(--container-padding);
   background: var(--pure-white);
 }
 
 .brands__list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 48px;
+  gap: 24px 48px;
   max-width: var(--container-width);
-  min-height: 76px;
-  margin-inline: auto;
-  padding: 24px var(--container-padding);
+  min-height: 28px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
 }
 
 .brands__list li {
@@ -51,10 +54,12 @@
 }
 
 @media (max-width: 992px) {
-  .brands__list {
-    gap: 28px;
-    min-height: 96px;
+  .brands {
     padding-block: 28px;
+  }
+
+  .brands__list {
+    gap: 24px 28px;
   }
 
   .brands__logo--airbnb {
@@ -83,12 +88,15 @@
 }
 
 @media (max-width: 576px) {
+  .brands {
+    padding-block: 32px;
+  }
+
   .brands__list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px 16px;
     min-height: 0;
-    padding-block: 32px;
   }
 
   .brands__logo,

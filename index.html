@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <!-- Favicon -->
-    <link rel="icon" href="./public/landify-logo.svg" />
+    <link rel="icon" type="image/png" href="./styles/img/Colorlogo.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -175,14 +175,6 @@
       </section>
     </main>
 
-    <script>
-      const navToggle = document.querySelector(".nav-toggle");
-      const nav = document.getElementById("primary-nav");
-
-      navToggle.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("is-open");
-        navToggle.setAttribute("aria-expanded", String(isOpen));
-      });
-    </script>
+    <script src="./scripts/navigation.js"></script>
   </body>
 </html>
