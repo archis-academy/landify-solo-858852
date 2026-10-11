@@ -7,18 +7,20 @@
   background: transparent;
 }
 
-/* Baseline flex layout: links are centred between the logo and the badges and
-   can never overlap them. Upgraded to true page-centring below via subgrid */
+/* logo | links | badges. Equal side columns keep the links centred on the
+   page; minmax(max-content) stops any item overlapping at narrower widths */
 .site-header__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+  grid-template-rows: var(--header-height);
   align-items: center;
   column-gap: 32px;
-  min-height: var(--header-height);
-  position: relative;
 }
 
 .logo {
-  flex-shrink: 0;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -52,18 +54,14 @@
 }
 
 .nav {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  column-gap: inherit;
-  min-width: 0;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .nav__list {
   display: flex;
   align-items: center;
   gap: 32px;
-  margin-inline: auto;
 }
 
 .nav__link {
@@ -87,7 +85,9 @@
 }
 
 .store-badges {
-  flex-shrink: 0;
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -143,36 +143,6 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Equal side columns keep the links centred on the page; minmax(max-content)
-   stops the logo or badges from ever being overlapped at narrower widths */
-@supports (grid-template-columns: subgrid) {
-  .site-header__inner {
-    display: grid;
-    grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
-  }
-
-  .logo {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: start;
-  }
-
-  .nav {
-    grid-column: 2 / 4;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: subgrid;
-  }
-
-  .nav__list {
-    margin-inline: 0;
-  }
-
-  .store-badges {
-    justify-self: end;
-  }
-}
-
 @media (max-width: 1100px) {
   .site-header__inner {
     column-gap: 24px;
@@ -183,45 +153,54 @@
   }
 }
 
+/* Mobile: the links and badges become rows 2 and 3 of the same grid, shown as
+   a white panel that spans the full container width */
 @media (max-width: 992px) {
   .site-header__inner {
-    display: flex;
-    justify-content: space-between;
+    grid-template-columns: 1fr auto;
   }
 
   .nav-toggle {
     display: flex;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .nav,
+  .store-badges {
+    display: none;
+    grid-column: 1 / -1;
+    margin-inline: calc(var(--container-padding) * -1);
+    padding-inline: var(--container-padding);
+    background: var(--pure-white);
   }
 
   .nav {
-    position: absolute;
-    top: var(--header-height);
-    left: 0;
-    right: 0;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
-    padding: 24px var(--container-padding) 32px;
-    background: var(--pure-white);
+    grid-row: 2;
+    padding-top: 24px;
+  }
+
+  .store-badges {
+    grid-row: 3;
+    justify-self: stretch;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-block: 24px 32px;
     border-bottom: 1px solid var(--line-200);
     box-shadow: 0 16px 24px -16px rgba(0, 0, 0, 0.15);
   }
 
   .nav.is-open {
+    display: block;
+  }
+
+  .store-badges.is-open {
     display: flex;
   }
 
   .nav__list {
-    margin-inline: 0;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-  }
-
-  .store-badges {
-    justify-self: auto;
-    flex-wrap: wrap;
-    justify-content: flex-start;
   }
 }
