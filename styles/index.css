@@ -1,8 +1,18 @@
 @import url("/styles/global/reset.css");
 @import url("/styles/global/variables.css");
+@import url("/styles/global/components.css");
 
 /*
 * import other css files here
 */
 
-@import url("/styles/sections/welcome.css");
+@import url("/styles/sections/header.css");
+@import url("/styles/sections/hero.css");
+@import url("/styles/sections/brands.css");
+@import url("/styles/sections/features.css");
+@import url("/styles/sections/testimonials.css");
+@import url("/styles/sections/stats.css");
+@import url("/styles/sections/showcase.css");
+@import url("/styles/sections/trends.css");
+@import url("/styles/sections/app-promo.css");
+@import url("/styles/sections/footer.css");

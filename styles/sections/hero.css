@@ -1,0 +1,198 @@
+/* min-height keeps the Figma proportions (logo strip inside the 866px fold)
+   while letting the hero grow with zoom or longer copy */
+.hero {
+  position: relative;
+  min-height: 790px;
+  padding-top: 150px;
+  background: var(--landify-ice);
+}
+
+/* Decorative layers, clipped so the phone shadow can still spill below */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero__glow {
+  position: absolute;
+  top: -260px;
+  right: -220px;
+  width: 820px;
+  height: 820px;
+  background: radial-gradient(
+    circle,
+    rgba(212, 165, 255, 0.45) 0%,
+    rgba(237, 229, 255, 0.3) 40%,
+    transparent 70%
+  );
+}
+
+.hero__art {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 430px;
+}
+
+.hero__shape--white {
+  fill: var(--pure-white);
+}
+
+.hero__shape--lavender {
+  fill: var(--landify-lavender);
+}
+
+.hero__shape--purple {
+  fill: var(--landify-purple-soft);
+}
+
+.hero__shape--turquoise {
+  fill: var(--landify-turquoise);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 48px;
+}
+
+.hero__content {
+  padding-top: 70px;
+}
+
+.hero__title {
+  color: var(--landify-ink);
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 154px;
+  height: 48px;
+  margin-top: 28px;
+  padding-inline: 24px;
+  border-radius: 4px;
+  background: var(--landify-purple);
+  color: var(--pure-white);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  transition: background-color 0.2s ease;
+}
+
+.hero__cta:hover {
+  background: var(--landify-purple-hover);
+}
+
+.hero__cta:focus-visible {
+  outline: 3px solid var(--landify-purple-soft);
+  outline-offset: 2px;
+}
+
+/* Negative margin lets the PNG's transparent shadow padding spill past the
+   hero edge instead of adding empty height */
+.hero__visual {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -38px;
+}
+
+/* PNG has ~5% transparent padding: 368px image ≈ 310px visible phone */
+.hero__mockup {
+  display: block;
+  width: 368px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1100px) {
+  .hero__title {
+    font-size: 52px;
+  }
+
+  .hero__mockup {
+    width: 330px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    min-height: 0;
+    padding-top: 120px;
+    padding-bottom: 32px;
+  }
+
+  .hero__visual {
+    margin-bottom: 0;
+  }
+
+  .hero__inner {
+    column-gap: 24px;
+  }
+
+  .hero__content {
+    padding-top: 48px;
+  }
+
+  .hero__title {
+    font-size: 42px;
+  }
+
+  .hero__mockup {
+    width: 290px;
+  }
+
+  .hero__art {
+    height: 340px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 104px;
+    padding-bottom: 24px;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  .hero__content {
+    padding-top: 0;
+  }
+
+  .hero__title {
+    font-size: clamp(32px, 9vw, 42px);
+  }
+
+  .hero__visual {
+    justify-content: center;
+  }
+
+  .hero__mockup {
+    width: min(280px, 78%);
+  }
+
+  .hero__glow {
+    top: -200px;
+    right: -320px;
+  }
+
+  .hero__art {
+    height: 260px;
+  }
+}

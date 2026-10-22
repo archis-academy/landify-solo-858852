@@ -1,0 +1,224 @@
+/* Measured from the Figma frame: two 434px columns with a 30px gap, centred.
+   The right column starts lower and the narrow cards hug the centre line,
+   which produces the staggered composition without positioning the cards */
+.testimonials {
+  overflow: hidden;
+  padding-block: 106px 100px;
+  background: var(--landify-sky);
+  color: var(--landify-text);
+}
+
+.testimonials__layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 434px));
+  justify-content: center;
+  align-items: start;
+  column-gap: 30px;
+}
+
+.testimonials__column {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.testimonials__column--offset {
+  gap: 32px;
+  padding-top: 49px;
+}
+
+.testimonials__intro {
+  position: relative;
+}
+
+/* Oversized decorative quote mark behind the heading */
+.testimonials__intro::before {
+  content: "";
+  position: absolute;
+  top: -52px;
+  left: -92px;
+  width: 137px;
+  height: 114px;
+  background: url("../img/testimonials/quote-mark.svg") no-repeat center / contain;
+}
+
+.testimonials__title,
+.testimonials__subtitle {
+  position: relative;
+}
+
+.testimonials__title {
+  font-size: 48px;
+  font-weight: var(--fw-bold);
+  line-height: 63px;
+}
+
+.testimonials__subtitle {
+  margin-top: 11px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+/* Right padding is 7px tighter than Figma so Inter wraps the quotes on the
+   same words as the design */
+.testimonial {
+  padding: 31px 24px 32px 31px;
+  border-radius: var(--radius-md);
+  background: var(--pure-white);
+  box-shadow: 0 10px 24px rgba(30, 140, 150, 0.08);
+}
+
+.testimonial--hubspot,
+.testimonial--bookmyshow {
+  width: 341px;
+  max-width: 100%;
+}
+
+.testimonial--hubspot {
+  align-self: flex-end;
+}
+
+.testimonial__logo {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+.testimonial--bookmyshow .testimonial__logo {
+  height: 37px;
+  margin-block: 1.5px;
+}
+
+.testimonial__quote {
+  position: relative;
+  margin-top: 31px;
+  padding-left: 31px;
+  font-size: 18px;
+  line-height: 31.5px;
+}
+
+/* Small decorative quote mark beside the testimonial text */
+.testimonial__quote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 14px;
+  background: url("../img/testimonials/quote-mark-light.svg") no-repeat left top /
+    contain;
+}
+
+.testimonial__author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 24px;
+  padding-left: 31px;
+}
+
+.testimonial__name {
+  font-size: 18px;
+  font-weight: var(--fw-bold);
+  line-height: 26px;
+}
+
+.testimonial__role {
+  color: var(--landify-gray);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Keep the large quote mark inside the viewport once the centred layout
+   gets close to the screen edge */
+@media (max-width: 1100px) {
+  .testimonials__intro::before {
+    top: -46px;
+    left: -40px;
+    width: 120px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .testimonials {
+    padding-block: 88px 80px;
+  }
+
+  .testimonials__layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+
+  .testimonial--hubspot,
+  .testimonial--bookmyshow {
+    width: 100%;
+  }
+
+  .testimonials__intro::before {
+    top: -44px;
+    left: -16px;
+    width: 104px;
+    height: 86px;
+  }
+
+  .testimonials__title {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  .testimonial {
+    padding: 28px 24px;
+  }
+
+  .testimonial__quote,
+  .testimonial__author {
+    padding-left: 28px;
+  }
+}
+
+/* Below 768px two columns get too narrow for the copy, so stack everything */
+@media (max-width: 767px) {
+  .testimonials__layout {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 24px;
+  }
+
+  .testimonials__column,
+  .testimonials__column--offset {
+    gap: 24px;
+    padding-top: 0;
+  }
+
+  .testimonials__intro {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonials {
+    padding-block: 72px;
+  }
+
+  .testimonials__intro::before {
+    top: -36px;
+    left: -8px;
+    width: 84px;
+    height: 70px;
+  }
+
+  .testimonials__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .testimonials__subtitle {
+    margin-top: 8px;
+  }
+
+  .testimonial__quote {
+    margin-top: 24px;
+    font-size: 17px;
+    line-height: 28px;
+  }
+}

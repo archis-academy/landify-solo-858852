@@ -1,0 +1,80 @@
+/* Measured from the full 1440px Figma frame: a 1110px strip between two faint
+   hairlines, logos 64px apart and centred on a ~110px tall row */
+.brands {
+  padding: 13px var(--container-padding);
+  background: var(--pure-white);
+}
+
+.brands__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px 64px;
+  max-width: 1110px;
+  min-height: 111px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  border-block: 1px solid var(--line-100);
+}
+
+.brands__list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brands__logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Widths match each logo's Figma width; height follows the artwork ratio */
+.brands__logo--airbnb {
+  width: 89px;
+}
+
+.brands__logo--hubspot {
+  width: 84px;
+}
+
+.brands__logo--google {
+  width: 84px;
+}
+
+.brands__logo--microsoft {
+  width: 122px;
+}
+
+.brands__logo--walmart {
+  width: 110px;
+}
+
+.brands__logo--fedex {
+  width: 79px;
+}
+
+@media (max-width: 992px) {
+  .brands__list {
+    gap: 24px;
+    padding-block: 28px;
+  }
+}
+
+/* Three per row on phones, each logo scaled to its cell */
+@media (max-width: 576px) {
+  .brands__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px 16px;
+    min-height: 0;
+  }
+
+  .brands__logo {
+    width: auto;
+    max-height: 22px;
+  }
+}

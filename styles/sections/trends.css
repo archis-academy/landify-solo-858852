@@ -1,0 +1,102 @@
+/* Measured from the full 1440px Figma frame: a 1116px-wide centred block with
+   a 40px heading and an 18px paragraph in a 541px column, vertically centred
+   on each other, and a 2.76:1 photo below */
+.trends {
+  padding-block: 100px;
+  background: var(--pure-white);
+  color: var(--landify-text);
+}
+
+.trends__inner {
+  max-width: calc(1116px + 2 * var(--container-padding));
+}
+
+.trends__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 541px);
+  align-items: center;
+  column-gap: 64px;
+}
+
+.trends__title {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 54px;
+}
+
+.trends__text {
+  font-size: 18px;
+  line-height: 32px;
+}
+
+/* Fixed frame ratio from the design; cover crops the photo instead of
+   stretching it if the exported file has a different ratio */
+.trends__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1116 / 404;
+  margin-top: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+@media (max-width: 1100px) {
+  .trends__header {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 48px;
+  }
+
+  .trends__title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 992px) {
+  .trends {
+    padding-block: 80px;
+  }
+
+  .trends__header {
+    column-gap: 40px;
+  }
+
+  .trends__title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .trends__text {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .trends__image {
+    margin-top: 40px;
+  }
+}
+
+/* Stack the copy and give the photo a taller crop so it stays legible */
+@media (max-width: 767px) {
+  .trends__header {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 16px;
+  }
+
+  .trends__image {
+    aspect-ratio: 3 / 2;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .trends {
+    padding-block: 64px;
+  }
+
+  .trends__title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}

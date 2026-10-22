@@ -1,0 +1,149 @@
+/* Measured from the full 1440px Figma frame: content runs 165px in from the
+   edges (1110px), 32px logo, 16px links on a 38px row pitch, 14px copyright,
+   and the official 135x40 store badges stacked on the right */
+.site-footer {
+  padding-block: 56px;
+  background: var(--landify-ink);
+  color: var(--pure-white);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+  max-width: calc(1110px + 2 * var(--container-padding));
+}
+
+.site-footer__logo {
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.site-footer__logo img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  margin-top: 21px;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer__link {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 2px;
+}
+
+.site-footer__link:hover {
+  color: var(--landify-turquoise);
+}
+
+.site-footer__logo:focus-visible,
+.site-footer__link:focus-visible,
+.site-footer__badge:focus-visible {
+  outline: 2px solid var(--pure-white);
+  outline-offset: 4px;
+}
+
+.site-footer__copyright {
+  margin-top: 26px;
+  color: var(--landify-mist);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* 152px wide so the column starts at x=1123 like the design, with the badges
+   left-aligned under the label */
+.site-footer__apps {
+  flex: 0 0 152px;
+}
+
+.site-footer__apps-title {
+  color: var(--landify-mist);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+.site-footer__badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Official badge artwork already includes its outline and rounded corners */
+.site-footer__badge {
+  display: block;
+  border-radius: 6px;
+}
+
+.site-footer__badge img {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+@media (max-width: 992px) {
+  .site-footer__main {
+    flex: 1 1 360px;
+  }
+}
+
+/* Stack the two areas; links get 44px hit areas for touch */
+@media (max-width: 576px) {
+  .site-footer {
+    padding-block: 48px;
+  }
+
+  .site-footer__inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .site-footer__main,
+  .site-footer__apps {
+    flex: none;
+  }
+
+  .site-footer__nav {
+    row-gap: 0;
+    margin-top: 16px;
+  }
+
+  .site-footer__links {
+    gap: 0 24px;
+  }
+
+  .site-footer__link {
+    padding-block: 10px;
+  }
+
+  .site-footer__copyright {
+    margin-top: 16px;
+  }
+
+  .site-footer__badges {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

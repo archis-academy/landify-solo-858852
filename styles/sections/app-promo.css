@@ -1,0 +1,154 @@
+/* Measured from the 1:1 Figma frame: a 492px-tall teal band, a 540px text
+   column and a 607x492 phone composition whose edges are the section edges,
+   so the phones are cropped top and bottom by the section itself */
+.app-promo {
+  overflow: hidden;
+  background: var(--landify-teal);
+  color: var(--landify-text);
+}
+
+/* No column gap: the phone box starts with ~84px of shadow before the first
+   device, which already separates it from the copy */
+.app-promo__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 545px) minmax(0, 607px);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-promo__content {
+  padding-block: 40px;
+}
+
+.app-promo__title {
+  font-size: 48px;
+  font-weight: var(--fw-bold);
+  line-height: 64px;
+}
+
+.app-promo__text {
+  max-width: 545px;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.app-promo__label {
+  margin-top: 49px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+}
+
+.app-promo__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 9px;
+}
+
+.app-promo__badges a {
+  display: block;
+  border-radius: 6px;
+}
+
+.app-promo__badges a:focus-visible {
+  outline: 2px solid var(--landify-text);
+  outline-offset: 3px;
+}
+
+.app-promo__badges img {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+/* Phone composition: percentages of the 607x492 Figma box, so the overlap and
+   cropping stay identical at any width */
+.app-promo__phones {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 607 / 492;
+  overflow: hidden;
+}
+
+.app-promo__phone {
+  position: absolute;
+  max-width: none;
+  height: auto;
+}
+
+/* Lower part of the project-detail phone, already cut at the section top */
+.app-promo__phone--detail {
+  top: 0;
+  left: 0;
+  width: 56.01%;
+}
+
+/* Home screen phone: same 0.36 scale as the detail phone, cropped at the bottom */
+.app-promo__phone--home {
+  top: 16.09%;
+  left: 54.82%;
+  width: 45.24%;
+}
+
+@media (max-width: 1100px) {
+  .app-promo__inner {
+    grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+    column-gap: 24px;
+  }
+
+  .app-promo__title {
+    font-size: 40px;
+    line-height: 54px;
+  }
+
+  .app-promo__text {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .app-promo__label {
+    margin-top: 32px;
+  }
+}
+
+/* Stack the copy above the phones; the phones stay flush with the section
+   bottom so the home screen is still cropped by the section edge */
+@media (max-width: 992px) {
+  .app-promo__inner {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 40px;
+  }
+
+  .app-promo__content {
+    padding-block: 72px 0;
+  }
+
+  .app-promo__phones {
+    max-width: 607px;
+    margin-inline: auto;
+  }
+
+  /* The detail phone's artwork starts mid-device; fade its cut top edge since
+     it no longer meets the section boundary */
+  .app-promo__phone--detail {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%);
+    mask-image: linear-gradient(to bottom, transparent, #000 18%);
+  }
+}
+
+@media (max-width: 576px) {
+  .app-promo__content {
+    padding-top: 56px;
+  }
+
+  .app-promo__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .app-promo__label {
+    margin-top: 28px;
+  }
+}
