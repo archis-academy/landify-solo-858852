@@ -7,6 +7,7 @@
   --ink-900: #1f2937;
   --ink-600: #4b5563;
   --ink-400: #9ca3af;
+  --line-100: #f2f4f6;
   --line-200: #e5e7eb;
   --primary-600: #4f46e5;
   --primary-700: #4338ca;
@@ -19,8 +20,14 @@
   --landify-purple-hover: #7b22e6;
   --landify-purple-soft: #d4a5ff;
   --landify-lavender: #ede5ff;
+  --landify-lavender-light: #f1e4ff;
   --landify-turquoise: #70e1e7;
+  --landify-teal: #2ec5ce;
   --landify-ice: #f4f7ff;
+  --landify-text: #18191f;
+  --landify-gray: #727682; /* Figma #969bab, darkened to pass WCAG AA on white */
+  --landify-sky: #d5fafc;
+  --landify-mist: #d9dbe1;
 
   /* FONT SIZES */
   --fs-sm: 0.875rem;
@@ -31,11 +38,13 @@
 
   /* FONT WEIGHTS */
   --fw-regular: 400;
+  --fw-semibold: 600;
   --fw-bold: 700;
   --fw-black: 900;
 
   /* LAYOUT */
   --container-width: 1200px;
+  --container-width-wide: 1440px;
   --container-padding: 24px;
   --header-height: 80px;
   --radius-md: 8px;

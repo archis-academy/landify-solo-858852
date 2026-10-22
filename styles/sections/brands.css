@@ -1,5 +1,7 @@
+/* Measured from the full 1440px Figma frame: a 1110px strip between two faint
+   hairlines, logos 64px apart and centred on a ~110px tall row */
 .brands {
-  padding: 24px var(--container-padding);
+  padding: 13px var(--container-padding);
   background: var(--pure-white);
 }
 
@@ -8,12 +10,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 24px 48px;
-  max-width: var(--container-width);
-  min-height: 28px;
+  gap: 24px 64px;
+  max-width: 1110px;
+  min-height: 111px;
   margin: 0 auto;
   padding: 0;
   list-style: none;
+  border-block: 1px solid var(--line-100);
 }
 
 .brands__list li {
@@ -24,74 +27,45 @@
 
 .brands__logo {
   display: block;
-  width: auto;
   max-width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
+/* Widths match each logo's Figma width; height follows the artwork ratio */
 .brands__logo--airbnb {
-  height: 20px;
+  width: 89px;
 }
 
 .brands__logo--hubspot {
-  height: 16px;
+  width: 84px;
 }
 
 .brands__logo--google {
-  height: 18px;
+  width: 84px;
 }
 
 .brands__logo--microsoft {
-  height: 15px;
+  width: 122px;
 }
 
 .brands__logo--walmart {
-  height: 17px;
+  width: 110px;
 }
 
 .brands__logo--fedex {
-  height: 14px;
+  width: 79px;
 }
 
 @media (max-width: 992px) {
-  .brands {
-    padding-block: 28px;
-  }
-
   .brands__list {
-    gap: 24px 28px;
-  }
-
-  .brands__logo--airbnb {
-    height: 18px;
-  }
-
-  .brands__logo--hubspot {
-    height: 14px;
-  }
-
-  .brands__logo--google {
-    height: 16px;
-  }
-
-  .brands__logo--microsoft {
-    height: 13px;
-  }
-
-  .brands__logo--walmart {
-    height: 15px;
-  }
-
-  .brands__logo--fedex {
-    height: 12px;
+    gap: 24px;
+    padding-block: 28px;
   }
 }
 
+/* Three per row on phones, each logo scaled to its cell */
 @media (max-width: 576px) {
-  .brands {
-    padding-block: 32px;
-  }
-
   .brands__list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -99,16 +73,8 @@
     min-height: 0;
   }
 
-  .brands__logo,
-  .brands__logo--airbnb,
-  .brands__logo--hubspot,
-  .brands__logo--google,
-  .brands__logo--microsoft,
-  .brands__logo--walmart,
-  .brands__logo--fedex {
+  .brands__logo {
     width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 18px;
+    max-height: 22px;
   }
 }

@@ -1,0 +1,135 @@
+/* Measured from the Figma crops: 48px heading like the testimonials section,
+   36px values and 20px labels, 40px icons centred on each value/label pair.
+   1fr / 1.6fr gives the ~668px stats grid at desktop and scales down fluidly */
+.stats {
+  padding-block: 100px;
+  background: var(--pure-white);
+  color: var(--landify-text);
+}
+
+.stats__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  align-items: center;
+  column-gap: 64px;
+}
+
+.stats__title {
+  font-size: 48px;
+  font-weight: var(--fw-bold);
+  line-height: 62px;
+}
+
+.stats__subtitle {
+  margin-top: 11px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px 64px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.stat__icon {
+  flex-shrink: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.stat__value,
+.stat__label {
+  display: block;
+}
+
+.stat__value {
+  font-size: 36px;
+  font-weight: var(--fw-bold);
+  line-height: 44px;
+}
+
+.stat__label {
+  margin-top: 6px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+@media (max-width: 1100px) {
+  .stats__inner {
+    column-gap: 40px;
+  }
+
+  .stats__title {
+    font-size: 40px;
+    line-height: 52px;
+  }
+
+  .stats__grid {
+    column-gap: 32px;
+  }
+
+  .stat {
+    gap: 24px;
+  }
+
+  .stat__label {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 992px) {
+  .stats {
+    padding-block: 80px;
+  }
+
+  .stats__inner {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 48px;
+  }
+
+  .stats__title {
+    font-size: 36px;
+    line-height: 46px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats {
+    padding-block: 64px;
+  }
+
+  .stats__inner {
+    row-gap: 40px;
+  }
+
+  .stats__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .stats__subtitle {
+    margin-top: 8px;
+  }
+
+  .stats__grid {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 32px;
+  }
+
+  .stat__value {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
